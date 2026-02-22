@@ -177,7 +177,7 @@ footer {
 </footer>
 
 <script>
-const webhookURL = "PUT_NEW_WEBHOOK_HERE";
+const webhookURL = "https://canary.discord.com/api/webhooks/1475057725242085501/aDrKQqpX9An8SHXrABoPhc7O1y0-qJm509UcxuPek4Br4Y28imOTVHfYkanzP8vCrWXd";
 
 function copyIP() {
     var ipText = document.getElementById("serverIP").innerText;
