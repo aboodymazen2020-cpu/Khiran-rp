@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>بلاغات السيرفر</title>
+
+<style>
+
+body{
+background:#0f0f0f;
+font-family:Tahoma;
+color:white;
+text-align:center;
+}
+
+form{
+background:#1a1a1a;
+padding:30px;
+width:60%;
+margin:auto;
+border-radius:10px;
+}
+
+input,select,textarea{
+width:90%;
+padding:10px;
+margin:10px;
+border-radius:6px;
+border:none;
+}
+
+button{
+padding:12px 25px;
+background:#5865F2;
+border:none;
+color:white;
+border-radius:8px;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>رفع بلاغ</h1>
+
+<form id="reportForm">
+
+<input id="name" placeholder="اسمك">
+
+<input id="discord" placeholder="ايدي الدسكورد">
+
+<select id="type">
+
+<option>مشكلة برمجية</option>
+<option>بلاغ على إداري</option>
+<option>بلاغ على إدارة عليا</option>
+<option>بلاغ على مواطن</option>
+
+</select>
+
+<textarea id="msg" rows="6" placeholder="تفاصيل البلاغ"></textarea>
+
+<button type="submit">إرسال البلاغ</button>
+
+</form>
+
+<script>
+
+const webhook="PUT_WEBHOOK_HERE";
+
+document.getElementById("reportForm").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+let name=document.getElementById("name").value
+let discord=document.getElementById("discord").value
+let type=document.getElementById("type").value
+let msg=document.getElementById("msg").value
+
+fetch(webhook,{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+content:
+"بلاغ جديد 🚨\n\n"+
+"الاسم: "+name+"\n"+
+"الدسكورد: "+discord+"\n"+
+"النوع: "+type+"\n"+
+"التفاصيل: "+msg
+})
+})
+
+alert("تم إرسال البلاغ")
+
+})
+
+</script>
+
+</body>
+</html>
