@@ -2,142 +2,219 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<title>Khiran Vibes RP</title>
+<title>الأمن العسكري</title>
 
 <style>
 
 body{
-margin:0;
+direction:rtl;
 font-family:Tahoma;
+background:#0a0a0a;
 color:white;
-background:url("https://cdn.discordapp.com/attachments/1479297110724579328/1480135747016065148/512.gif") no-repeat center center fixed;
-background-size:cover;
+margin:0;
 }
 
-.overlay{
-background:rgba(0,0,0,0.65);
-min-height:100vh;
+/* تأثير الإضاءة */
+@keyframes policeLights {
+
+0% {box-shadow:0 0 20px red;}
+50% {box-shadow:0 0 25px blue;}
+100% {box-shadow:0 0 20px red;}
+
 }
 
 header{
 text-align:center;
-padding:40px;
-font-size:40px;
-font-weight:bold;
+padding:30px;
+background:#111;
+animation:policeLights 2s infinite;
 }
 
-.container{
-width:80%;
-margin:auto;
+nav{
+background:#000;
+padding:15px;
+text-align:center;
+border-top:2px solid red;
+border-bottom:2px solid blue;
 }
 
-.box{
-background:rgba(20,20,20,0.85);
-padding:25px;
-margin:25px 0;
-border-radius:12px;
-}
-
-button{
-padding:12px 30px;
-border:none;
-background:#5865F2;
+nav a{
 color:white;
-font-size:16px;
-border-radius:8px;
-cursor:pointer;
+margin:15px;
+text-decoration:none;
+font-weight:bold;
+font-size:18px;
 }
 
-a{
-text-decoration:none;
+nav a:hover{
+color:red;
+}
+
+section{
+margin:30px;
+padding:25px;
+background:#111;
+border-radius:10px;
+animation:policeLights 3s infinite;
+}
+
+.rank{
+background:#1a1a1a;
+padding:10px;
+margin:5px;
+border-right:5px solid red;
+border-left:5px solid blue;
+}
+
+h2{
+color:#ff4444;
+}
+
+footer{
+text-align:center;
+padding:20px;
+background:#000;
+border-top:2px solid red;
 }
 
 </style>
+
 </head>
 
 <body>
 
-<div class="overlay">
-
 <header>
-✮〢 〡𝐊𝐡𝐢𝐫𝐚𝐧・𝐕𝐢𝐛𝐞𝐬 ・ 𝐑𝐏
+<h1>الأمن العسكري</h1>
+<p>قطاع تابع لوزارة الداخلية</p>
 </header>
 
-<div class="container">
+<nav>
 
-<div class="box">
-<h2>نبذة عن السيرفر</h2>
+<a href="#about">من نحن</a>
+<a href="#sector">القطاع</a>
+<a href="#ranks">الرتب العسكرية</a>
+<a href="#leaders">القيادات</a>
+<a href="#poem">القصيدة</a>
+
+</nav>
+
+
+<section id="about">
+
+<h2>من نحن</h2>
+
+<p>
+الأمن العسكري قطاع أمني يعمل ضمن منظومة وزارة الداخلية، ويختص بحماية
+المنشآت العسكرية وتعزيز الانضباط العسكري والمساهمة في حفظ أمن الوطن.
+</p>
+
+</section>
+
+
+
+<section id="sector">
+
+<h2>قطاع وزارة الداخلية</h2>
+
+<p>
+يشارك الأمن العسكري في دعم الأمن الوطني والتنسيق مع القطاعات
+الأمنية الأخرى لتحقيق الاستقرار وحماية مقدرات الدولة.
+</p>
+
+</section>
+
+
+
+<section id="ranks">
+
+<h2>الرتب العسكرية</h2>
+
+<div class="rank">جندي</div>
+<div class="rank">جندي أول</div>
+<div class="rank">عريف</div>
+<div class="rank">وكيل رقيب</div>
+<div class="rank">رقيب</div>
+<div class="rank">رقيب أول</div>
+<div class="rank">رئيس رقباء</div>
+
+<h3>الضباط</h3>
+
+<div class="rank">ملازم</div>
+<div class="rank">ملازم أول</div>
+<div class="rank">نقيب</div>
+<div class="rank">رائد</div>
+<div class="rank">مقدم</div>
+<div class="rank">عقيد</div>
+<div class="rank">عميد</div>
+
+<h3>الرتب العليا</h3>
+
+<div class="rank">لواء</div>
+<div class="rank">فريق</div>
+<div class="rank">فريق أول</div>
+
+</section>
+
+
+
+<section id="leaders">
+
+<h2>قيادات وزارة الداخلية</h2>
+
+<div class="rank">مستشار وزير الداخلية</div>
+<div class="rank">نائب وزير الداخلية</div>
+<div class="rank">وزير الداخلية</div>
+
+</section>
+
+
+
+<section id="poem">
+
+<h2>قصيدة عسكرية</h2>
 
 <p>
 
-مرحباً بكم في سيرفر Khiran Vibes RP، أحد أفضل سيرفرات الرول بلاي العربية التي تهدف إلى تقديم تجربة واقعية وممتعة للاعبين.
+1 نحن الجنود حماة الدار والوطن  
+2 بالعزم نحمي ثرى الأمجاد والزمن  
 
-يتميز السيرفر بنظام متطور وإدارة نشطة تعمل على تطوير السيرفر بشكل مستمر وتقديم أفضل تجربة ممكنة للاعبين.
+3 جندي وجندي أول في الميدان  
+4 والعزم في القلب مثل النار والبركان  
 
-نسعى لبناء مجتمع قوي قائم على الاحترام والتفاعل والاحترافية في لعب الرول بلاي.
+5 عريف يقود الصفوف بثبات  
+6 ووكيل رقيب يحفظ الأمن والثبات  
 
-</p>
-</div>
+7 رقيب ورقيب أول في القيادة  
+8 ورئيس رقباء عنوان السيادة  
 
+9 ملازم يسير بالعزم والإيمان  
+10 وملازم أول يحمي أرض الأوطان  
 
-<div class="box">
-<h2>إدارة السيرفر</h2>
+11 نقيب في الميدان عنوان الشجاعة  
+12 ورائد في القيادة مثال البراعة  
 
-<p>
+13 مقدم بعقله يرسم الطريق  
+14 وعقيد بالعزم لا يعرف الضيق  
 
-• إدارة متواجدة يومياً  
-• متابعة البلاغات  
-• تنظيم الفعاليات  
-• تطوير مستمر للسيرفر  
+15 عميد يقود الصفوف بثبات  
+16 ويزرع في الجنود أعظم الصفات  
 
-</p>
+17 لواء فوق الميدان كالنور ظهر  
+18 وفريق بالعزم مثل البحر هدر  
 
-</div>
-
-
-<div class="box">
-<h2>خدمات السيرفر</h2>
-
-<p>
-
-• نظام اقتصادي متكامل  
-• وظائف متعددة  
-• فعاليات أسبوعية  
-• دعم فني سريع  
+19 فريق أول مقامه فوق القمم  
+20 وللوطن نحيا مدى كل الزمن  
 
 </p>
 
-</div>
+</section>
 
 
-<div class="box">
-<h2>الفعاليات</h2>
+<footer>
 
-<p>
+<p>الأمن العسكري © جميع الحقوق محفوظة</p>
 
-نقوم بتنظيم فعاليات مثل:
-
-سباقات – معارك – أحداث رول بلاي – مسابقات وجوائز.
-
-</p>
-
-</div>
-
-
-<div class="box" style="text-align:center">
-
-<a href="https://discord.gg/kv7">
-<button>الدخول إلى الدسكورد</button>
-</a>
-
-<a href="reports.html">
-<button>تقديم بلاغ</button>
-</a>
-
-</div>
-
-</div>
-</div>
+</footer>
 
 </body>
 </html>
