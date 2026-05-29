@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>🔥 WAR Broadcast Panel</title>
+
+<style>
+@keyframes fire {
+  0% { box-shadow: 0 0 20px red; }
+  50% { box-shadow: 0 0 45px orange; }
+  100% { box-shadow: 0 0 20px red; }
+}
+
+body {
+  background: radial-gradient(circle, #220000, #000);
+  color: white;
+  font-family: Tahoma;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.panel {
+  background: #120000;
+  padding: 30px;
+  width: 430px;
+  border-radius: 18px;
+  animation: fire 2s infinite;
+}
+
+input, textarea, select, button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+}
+
+button {
+  background: linear-gradient(90deg, darkred, orange);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+h2 {
+  text-align: center;
+  color: orange;
+}
+</style>
+</head>
+
+<body>
+<div class="panel">
+  <h2>🔥 WAR Broadcast Panel 🔥</h2>
+
+  <input id="password" placeholder="كلمة المرور">
+
+  <select id="guilds">
+    <option>جاري تحميل السيرفرات...</option>
+  </select>
+
+  <input id="title" placeholder="عنوان الإمبيد">
+  <textarea id="desc" placeholder="الوصف"></textarea>
+  <input id="color" placeholder="#ff0000">
+
+  <button onclick="send()">إرسال فوري</button>
+
+  <p id="status"></p>
+</div>
+
+<script>
+const API = "https://YOUR-SERVER-URL";
+
+async function loadGuilds() {
+  const res = await fetch(`${API}/guilds`);
+  const guilds = await res.json();
+
+  const select = document.getElementById("guilds");
+  select.innerHTML = "";
+
+  guilds.forEach(g => {
+    const opt = document.createElement("option");
+    opt.value = g.id;
+    opt.textContent = g.name;
+    select.appendChild(opt);
+  });
+}
+
+async function send() {
+  status.innerText = "⏳ جاري الإرسال...";
+
+  const res = await fetch(`${API}/broadcast`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      password: password.value,
+      guildId: guilds.value,
+      title: title.value,
+      description: desc.value,
+      color: color.value
+    })
+  });
+
+  const data = await res.json();
+  status.innerText = data.success
+    ? `🔥 تم الإرسال | ${data.sent} عضو`
+    : "❌ فشل الإرسال";
+}
+
+loadGuilds();
+</script>
+</body>
+</html>
